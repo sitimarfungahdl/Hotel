@@ -53,4 +53,9 @@ class AdminController extends Controller
         $data->save();
         return redirect()->back()->with('message', 'Room Added Successfully');
     }
+    public function view_room()
+    {
+        $data = Room::all();
+        return view('admin.view_room',compact('data'));
+    }
 }
